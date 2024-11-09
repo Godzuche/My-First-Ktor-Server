@@ -15,6 +15,10 @@ fun Application.configureRouting() {
             call.respondText("Hello World!")
         }
 
+        post("/url_encoded"){
+            call.application.environment.log.info(call.receiveText())
+        }
+
         post("/page") {
             // Receive only text parameters
             /*try {
